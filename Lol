@@ -1,0 +1,100 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+class array{
+    int size=10;
+    int arr[10] = {};
+    public:
+    void input(){
+        for (int i = 0; i < size; i++)
+        {
+            cout << endl;
+            cout << "Enter " << i << " element ";
+            cin >> arr[i];
+        }
+        
+        
+    }
+    void traversal(){
+        for (int i = 0; i < size; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        
+    }
+    void insert(int pos, int element){
+        for (int i = size; i < size-pos; i--)
+        {
+            arr[i]=arr[i+1];
+        }
+        arr[pos]=element;
+        
+
+    }
+    void del(int pos){
+        for (int i = pos; i < size-1; i++)
+        {
+            arr[i]= arr[i+1];
+        }
+        
+    }
+
+};
+int func(){
+    int x;
+    cout << "<<<<::Welcome to the world of array::>>>>" << endl <<"Enter 1 for entering the element" << endl <<  "Enter 2 for traversal the element "<<endl;
+    cout << "Enter 3 for inserting the element " <<endl<< "Enter 4 for deliting the elemnt"<<endl<<"Enter 0 to exit the program "<<endl<<"::::>";
+    cin >> x;
+    return x;
+}
+
+
+int main(void){
+    array g;
+    int a;
+    //cout << "Do you want to perform operations so enter 9";
+    //cin >> a;
+    while (true)
+
+    {
+        int n;
+        n = func();
+        if (n==1)
+        {
+            g.input();
+            continue;
+        }
+        if (n==2)
+        {
+            g.traversal();
+        }
+        if (n==3)
+        {
+            int pos,element;
+            cout << "Enter position : ";
+            cin >> pos;
+            cout << "Enter element : ";
+            cin >> element;
+            g.insert(pos,element);
+        }
+        if (n==4)
+        {
+            /* code */
+            int poss;
+            cout << "Enter position : ";
+            g.del(poss);
+        }
+        if(n==0)break;
+        
+        
+        
+
+        
+    }
+
+}
+
+//problem
+/*fix output after traversel 
+enter documentation
+use a string comparison*/
