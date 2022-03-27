@@ -2,9 +2,18 @@
 #include <string.h>
 using namespace std;
 class array{
-    int size=10;
-    int arr[10] = {};
+    //int size;
+    //int arr[size]={};
     public:
+    int size;
+    array(){
+        size =10;
+    }
+    
+    array(int x){
+        size = x;
+    }
+    int arr[size]={};
     void input(){
         for (int i = 0; i < size; i++)
         {
@@ -42,18 +51,28 @@ class array{
 };
 int func(){
     int x;
-    cout << "<<<<::Welcome to the world of array::>>>>" << endl <<"Enter 1 for entering the element" << endl <<  "Enter 2 for traversal the element "<<endl;
-    cout << "Enter 3 for inserting the element " <<endl<< "Enter 4 for deliting the elemnt"<<endl<<"Enter 0 to exit the program "<<endl<<"::::>";
+    cout << "|___________________________________________________|"<< endl;
+    cout << "|choice           |                      description|" << endl; 
+
+    cout <<"|_____   1   _____|Input elements in the array.     |"<< endl;
+    cout <<"|_____   2   _____|Traversal the array.             |"<<endl;
+    cout << "|_____   3   _____|Insert the element in the array. |"<<endl;
+    cout << "|_____   4   _____|Delete an element in the array.  |"<<endl;
+    cout << "|_____   0   _____|Exit the program.                |"<<endl;
+    cout << "|---------------------------------------------------|"<< endl;
+    cout <<"   CHOICE: ";
     cin >> x;
     return x;
 }
 
 
 int main(void){
-    array g;
+    
     int a;
     //cout << "Do you want to perform operations so enter 9";
-    //cin >> a;
+    cin >> a;
+    array g(a);
+    
     while (true)
 
     {
@@ -67,6 +86,7 @@ int main(void){
         if (n==2)
         {
             g.traversal();
+            cout << endl;
         }
         if (n==3)
         {
