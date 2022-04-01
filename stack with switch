@@ -1,0 +1,132 @@
+#include <iostream>
+
+using namespace std;
+
+#define MAX 1000
+
+class Stack {
+	int top;
+
+public:
+	int a[MAX]; // Maximum size of Stack
+
+	Stack() { top = -1; }
+	bool push(int x);
+	int pop();
+	int peek();
+	bool isEmpty();
+};
+
+bool Stack::push(int x)
+{
+	if (top >= (MAX - 1)) {
+		cout << "Stack Overflow";
+		return false;
+	}
+	else {
+		a[++top] = x;
+		cout << x << " pushed into stack\n";
+		return true;
+	}
+}
+
+int Stack::pop()
+{
+	if (top < 0) {
+		cout << "Stack Underflow";
+		return 0;
+	}
+	else {
+		int x = a[top--];
+		return x;
+	}
+}
+
+int Stack::peek()
+{
+    if (top < 0) {
+        cout << "Stack is Empty";
+        return 0;
+    }
+    else {
+        int x = a[top];
+        return x;
+    }
+}
+
+bool Stack::isEmpty()
+{
+	return (top < 0);
+}
+
+int func(){
+    int x;
+    cout << "|__________________________________________________________|"<< endl;
+    cout << "|choice           |                             description|" << endl; 
+    cout <<"|_____   1   _____|Insert or push the element in the array.|"<< endl;
+    cout <<"|_____   2   _____|Pop the element in the array.           |"<<endl;
+    cout << "|_____   3   _____|Print the stack.                        |"<<endl;
+    cout << "|_____   4   _____|View the top of the stack               |"<<endl;
+    cout << "|_____   5   _____|Check whether stack is empty or no      |"<<endl;
+    cout << "|_____   0   _____|Exit the program.                       |"<<endl;
+    cout << "|----------------------------------------------------------|"<< endl;
+    cout <<"   CHOICE: ";
+    cin >> x;
+    return x;
+}
+int main()
+{
+	class Stack s;
+    while (true)
+    {
+        int n;
+        n = func();
+        switch (n);
+    
+        switch (n)
+        {
+            int n;
+            n = func();
+            
+            case (1):
+            {
+                int ele;
+                cout << "Enter the element you want to enter :";
+                cin >> ele;
+                s.push(ele);
+                continue;
+            }
+            case (2):
+            {
+                s.pop();
+                cout << s.pop() << " Popped from stack\n";
+            }
+            case (3):
+            {
+                cout<<"Elements present in stack : "<<endl;
+                while(!s.isEmpty())
+                    {
+                        // print top element in stack
+                        cout<<s.peek()<<endl;
+                        // remove top element in stack
+                        s.pop();
+                    }
+            }
+            case (4):{
+                cout << " Top of the stack is : "<< s.peek()<<endl;
+            }
+            case (5):{
+                int kk =s.isEmpty();
+                if (kk==0)cout<<"No the stack is not empty."<<endl;
+                else{cout<<"Yes the stack is empty."<<endl;}
+            }
+            default:break;
+        
+
+        }
+    }
+    
+	
+
+	return 0;
+}
