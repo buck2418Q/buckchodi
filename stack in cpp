@@ -1,4 +1,3 @@
-/* C++ program to implement basic stack operations */
 #include <iostream>
 
 using namespace std;
@@ -59,23 +58,68 @@ bool Stack::isEmpty()
 	return (top < 0);
 }
 
-// Driver program to test above functions
+int func(){
+    int x;
+    cout << "|__________________________________________________________|"<< endl;
+    cout << "|choice           |                             description|" << endl; 
+    cout <<"|_____   1   _____|Insert or push the element in the array.|"<< endl;
+    cout <<"|_____   2   _____|Pop the element in the array.           |"<<endl;
+    cout << "|_____   3   _____|Print the stack.                        |"<<endl;
+    cout << "|_____   4   _____|View the top of the stack               |"<<endl;
+    cout << "|_____   5   _____|Check whether stack is empty or no      |"<<endl;
+    cout << "|_____   0   _____|Exit the program.                       |"<<endl;
+    cout << "|----------------------------------------------------------|"<< endl;
+    cout <<"   CHOICE: ";
+    cin >> x;
+    return x;
+}
 int main()
 {
 	class Stack s;
-	s.push(10);
-	s.push(20);
-	s.push(30);
-	cout << s.pop() << " Popped from stack\n";
-	//print all elements in stack :
-	cout<<"Elements present in stack : ";
-	while(!s.isEmpty())
-	{
-		// print top element in stack
-		cout<<s.peek()<<" ";
-		// remove top element in stack
-		s.pop();
-	}
+    while (true)
+    {
+        int n;
+        n = func();
+        
+        if (n==1)
+        {
+            int ele;
+            cout << "Enter the element you want to enter :";
+            cin >> ele;
+            s.push(ele);
+            continue;
+        }
+        if (n==2)
+        {
+            s.pop();
+            cout << s.pop() << " Popped from stack\n";
+        }
+        if (n==3)
+        {
+            cout<<"Elements present in stack : ";
+	        while(!s.isEmpty())
+	            {
+		            // print top element in stack
+		            cout<<s.peek()<<" ";
+		            // remove top element in stack
+                    cout << endl;
+		            s.pop();
+	            }
+        }
+        if (n==4){
+            cout << " Top of the stack is : "<< s.peek()<<endl;
+        }
+        if (n==5){
+            int kk =s.isEmpty();
+            if (kk==0)cout<<"No the stack is not empty."<<endl;
+            else{cout<<"Yes the stack is empty."<<endl;}
+        }
+        if (n==0){break;}
+        
+
+    }
+    
+	
 
 	return 0;
 }
